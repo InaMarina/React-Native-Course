@@ -2,11 +2,14 @@ import React, {useContext, useState} from 'react';
 import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
+import {AuthContext} from '../navigation/AuthProvider';
 
 const SignupScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
+
+  const {register} = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
@@ -38,7 +41,10 @@ const SignupScreen = ({navigation}) => {
         secureTextEntry={true}
       />
 
-      <FormButton buttonTitle="Sign Up" onPress={() => {}} />
+      <FormButton
+        buttonTitle="Sign Up"
+        onPress={() => register(email, password)}
+      />
 
       <View style={styles.textPrivate}>
         <Text style={styles.color_textPrivate}>
