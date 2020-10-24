@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1095147834523-b2mhv81213rcp7ssvcbjvjvlqrfmim05.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.firebasemobileapplication",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
           "client_id": "1095147834523-8f0u34spc2vrc7olqekpuicqhtq3qasm.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,7 +37,7 @@
           "other_platform_oauth_client": [
             {
               "client_id": "1095147834523-8f0u34spc2vrc7olqekpuicqhtq3qasm.apps.googleusercontent.com",
-              "client_type": 3
+              "client_type": 3 
             }
           ]
         }

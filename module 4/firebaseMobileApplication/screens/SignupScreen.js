@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import {AuthContext} from '../navigation/AuthProvider';
+import SocialButton from '../components/SocialButton';
 
 const SignupScreen = ({navigation}) => {
   const [email, setEmail] = useState();
@@ -66,6 +67,21 @@ const SignupScreen = ({navigation}) => {
         onPress={() => navigation.navigate('Login')}>
         <Text style={styles.navButtonText}>Have an account? Sign In</Text>
       </TouchableOpacity>
+      <SocialButton
+        buttonTitle="Sign Up with Facebook"
+        btnType="facebook"
+        color="#4867aa"
+        backgroundColor="#e6eaf4"
+        onPress={() => {}}
+      />
+
+      <SocialButton
+        buttonTitle="Sign Up with Google"
+        btnType="google"
+        color="#de4d41"
+        backgroundColor="#f5e7ea"
+        onPress={() => {}}
+      />
     </View>
   );
 };
