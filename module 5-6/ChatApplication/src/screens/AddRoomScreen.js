@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {View, StyleSheet} from 'react-native';
-import {IconButton, Title} from 'react-native-paper';
+import {View, StyleSheet, StatusBar} from 'react-native';
+import {IconButton, Title, Text} from 'react-native-paper';
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 
@@ -33,6 +33,8 @@ export default function AddRoomScreen({navigation}) {
 
   return (
     <View style={styles.rootContainer}>
+      <StatusBar backgroundColor="#6646ee" />
+
       <View style={styles.closeButtonContainer}>
         <IconButton
           icon="close-circle"
@@ -43,6 +45,10 @@ export default function AddRoomScreen({navigation}) {
       </View>
       <View style={styles.innerContainer}>
         <Title style={styles.title}>Create a new chat room</Title>
+        <Text style={styles.text}>
+          Give a describing name to your chatroom, e.g. the crag name
+        </Text>
+
         <FormInput
           labelName="Room Name"
           value={roomName}
@@ -81,5 +87,8 @@ const styles = StyleSheet.create({
   },
   buttonLabel: {
     fontSize: 22,
+  },
+  text: {
+    marginBottom: 20,
   },
 });

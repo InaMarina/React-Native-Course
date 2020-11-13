@@ -1,10 +1,19 @@
 import React, {createContext, useState} from 'react';
 import auth from '@react-native-firebase/auth';
+import {Alert} from 'react-native';
 
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null);
+
+  const createTwoButtonAlert = () =>
+    Alert.alert(
+      'Login Failed',
+      'Email and password does not match',
+      [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+      {cancelable: false},
+    );
 
   return (
     <AuthContext.Provider
@@ -16,6 +25,7 @@ export const AuthProvider = ({children}) => {
             await auth().signInWithEmailAndPassword(email, password);
           } catch (e) {
             console.log(e);
+            createTwoButtonAlert();
           }
         },
         register: async (email, password) => {

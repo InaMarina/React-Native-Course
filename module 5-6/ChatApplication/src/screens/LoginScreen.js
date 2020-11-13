@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import {Title} from 'react-native-paper';
 
 import {AuthContext} from '../navigation/AuthProvider';
@@ -8,14 +8,15 @@ import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 
 export default function Login({navigation}) {
-  const {login} = useContext(AuthContext);
+  const {login, error} = useContext(AuthContext);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   return (
     <View style={styles.container}>
-      <Title style={styles.titleText}>Welcome to Chat app</Title>
+      <Title style={styles.titleText}>Welcome to Climbers Chat</Title>
+      <Text style={styles.text}>A place for climbers to catch up!</Text>
       <FormInput
         labelName="Email"
         value={email}
@@ -61,5 +62,8 @@ const styles = StyleSheet.create({
   },
   navButtonText: {
     fontSize: 16,
+  },
+  text: {
+    marginBottom: 20,
   },
 });

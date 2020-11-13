@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+  StatusBar,
+} from 'react-native';
 import {List, Divider} from 'react-native-paper';
 import firestore from '@react-native-firebase/firestore';
 import Loading from '../components/Loading';
@@ -48,6 +54,8 @@ export default function HomeScreen({navigation}) {
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="#6646ee" />
+
       <FlatList
         data={threads}
         keyExtractor={(item) => item._id}
