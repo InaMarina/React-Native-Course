@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "258618458876",
+    "firebase_url": "https://dreamapplication-d5666.firebaseio.com",
+    "project_id": "dreamapplication-d5666",
+    "storage_bucket": "dreamapplication-d5666.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258618458876:android:e28e40eb310b3822678d79",
+        "android_client_info": {
+          "package_name": "com.dreamapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258618458876-u0c5cvikq9bpbgov7s3e156k59vbi332.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dreamapplication",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "258618458876-vk6emd8ej3nmuo1m1urentuf8gu518ar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPwOT-MB1Y3-y55IRYL4KlElKX8i7-_Cs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258618458876-vk6emd8ej3nmuo1m1urentuf8gu518ar.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
