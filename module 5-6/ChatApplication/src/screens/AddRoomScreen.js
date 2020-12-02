@@ -91,4 +91,10 @@ const styles = StyleSheet.create({
   text: {
     marginBottom: 20,
   },
+  listTitle: {
+    fontSize: 22,
+  },
+  listDescription: {
+    fontSize: 16,
+  },
 });
