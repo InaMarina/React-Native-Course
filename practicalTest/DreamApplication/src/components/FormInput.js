@@ -2,8 +2,10 @@ import React from 'react';
 import {StyleSheet, Dimensions} from 'react-native';
 import {TextInput} from 'react-native-paper';
 
+//Find out width & height of device
 const {width, height} = Dimensions.get('screen');
 
+//Input component that gets some variables as props
 export default function FormInput({labelName, ...rest}) {
   return (
     <TextInput
@@ -15,6 +17,7 @@ export default function FormInput({labelName, ...rest}) {
   );
 }
 
+//Stylesheet
 const styles = StyleSheet.create({
   input: {
     marginTop: 10,

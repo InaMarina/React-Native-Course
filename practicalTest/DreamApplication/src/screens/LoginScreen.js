@@ -1,14 +1,19 @@
 import React, {useState, useContext} from 'react';
 import {View, StyleSheet, ImageBackground} from 'react-native';
 import {Title} from 'react-native-paper';
+
+//Importing components
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 
+//Imported AuthContext make some functions and user information
+//available to use everywhere where it is imported
 import {AuthContext} from '../navigation/AuthProvider';
 
 export default function Login({navigation}) {
   const {login} = useContext(AuthContext);
 
+  //Statehooks
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,6 +21,9 @@ export default function Login({navigation}) {
     <ImageBackground
       source={require('../assets/background.png')}
       style={styles.image}>
+      {/* Main content of the screen: input for email, input for password, 
+      button login (function from authcontext) 
+      button for navigating to signupscreen*/}
       <View style={styles.container}>
         <Title style={styles.titleText}>
           Tervetuloa pitämään kirjaa unistasi!
@@ -36,7 +44,6 @@ export default function Login({navigation}) {
           title="Sisään!"
           modeValue="contained"
           labelStyle={styles.loginButtonLabel}
-          //login function is used with the help of AuthCntext
           onPress={() => login(email, password)}
         />
         <FormButton
@@ -50,6 +57,8 @@ export default function Login({navigation}) {
     </ImageBackground>
   );
 }
+
+//Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,

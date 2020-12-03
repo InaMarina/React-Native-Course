@@ -4,7 +4,8 @@ import {NavigationContainer} from '@react-navigation/native';
 //Firebase auth that provides some useful functions, like checking the user
 import auth from '@react-native-firebase/auth';
 
-//Check the user and set it into the AuthContext and it will be available for all components
+//Imported AuthContext make some functions and user information
+//available to use everywhere where it is imported
 import {AuthContext} from './AuthProvider';
 
 //Activity indicator for the async functions
@@ -16,6 +17,8 @@ import AppStack from './AppStack';
 
 export default function Routes() {
   const {user, setUser} = useContext(AuthContext);
+
+  //State hooks
   const [loading, setLoading] = useState(true);
   const [initializing, setInitializing] = useState(true);
 
@@ -25,7 +28,8 @@ export default function Routes() {
     if (initializing) setInitializing(false);
     setLoading(false);
   }
-  //useEffect is a react hook. By default, it runs both after the first render and after every update
+  //useEffect hook. By default, it runs both after the first render and after every update
+  // checks if user has changed
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber; // unsubscribe on unmount

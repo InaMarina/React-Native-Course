@@ -1,30 +1,44 @@
 import React, {useState, useContext} from 'react';
-import {View, StyleSheet, ImageBackground} from 'react-native';
+import {View, StyleSheet, ImageBackground, Alert} from 'react-native';
 import {Title, IconButton} from 'react-native-paper';
+
+//Importing components
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 
+//Imported AuthContext make some functions and user information
+//available to use everywhere where it is imported
 import {AuthContext} from '../navigation/AuthProvider';
 
 export default function SignupScreen({navigation}) {
   const {register} = useContext(AuthContext);
 
+  //Statehooks
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [secPassword, setSecPassword] = useState('');
 
+  //Function that checks that the passwords match, and if -> register (function from authcontext) else -> Alert
   const checkValidity = () => {
     console.log(password, secPassword);
     if (password == secPassword) {
       register(email, password);
     } else {
-      console.log('WROOOOONG DOES NOT MATCH');
+      Alert.alert(
+        'Rekisteröinti epäonnistui',
+        'Tarkista että salasanasi täsmäävät',
+        [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+        {cancelable: false},
+      );
     }
   };
   return (
     <ImageBackground
       source={require('../assets/background.png')}
       style={styles.image}>
+      {/* Main content of the screen: input for email, input for password x 2, 
+      button signing in (chechValidity function) 
+      button that navigates back to login*/}
       <View style={styles.container}>
         <Title style={styles.titleText}>Rekisteröidy UniKirjaan!</Title>
         <FormInput
@@ -64,6 +78,7 @@ export default function SignupScreen({navigation}) {
   );
 }
 
+//Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import {IconButton, Title, Card, Paragraph} from 'react-native-paper';
 
+//Returns backgroundimage, and cards with hardcoded content
 export default function LearnScreen({navigation}) {
   return (
     <ImageBackground
@@ -102,6 +103,8 @@ export default function LearnScreen({navigation}) {
     </ImageBackground>
   );
 }
+
+//Styles
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,

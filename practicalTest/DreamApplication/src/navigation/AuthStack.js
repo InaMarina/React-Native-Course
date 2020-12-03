@@ -6,10 +6,10 @@ import FirstScreen from '../screens/FirstScreen';
 import LoginScreen from '../screens/LoginScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 
-//Creating the stack navigator
+//Creating the stack navigator instance
 const Stack = createStackNavigator();
 
-//Creating and exporting the navigator
+//Creating and exporting the navigator. It is used in Routes.js
 export default function AuthStack() {
   return (
     <Stack.Navigator initialRouteName="FirstScreen" headerMode="none">

@@ -11,6 +11,8 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Title, Button, Card, Paragraph} from 'react-native-paper';
 
+//Imported AuthContext make some functions and user information
+//available to use everywhere where it is imported
 import {AuthContext} from '../navigation/AuthProvider';
 
 export default function DreamDiaryScreen({navigation}) {
@@ -18,17 +20,14 @@ export default function DreamDiaryScreen({navigation}) {
 
   return (
     <>
+      {/* Background pic */}
       <ImageBackground
         source={require('../assets/background.png')}
         style={styles.image}>
         <StatusBar backgroundColor="#1b053b" />
 
-        <View
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}>
+        {/* Menu and logoutbutton */}
+        <View style={styles.menuLogout}>
           <TouchableOpacity
             style={{paddingStart: 10}}
             onPress={() => navigation.openDrawer()}>
@@ -38,6 +37,8 @@ export default function DreamDiaryScreen({navigation}) {
             <Icon name="sign-out" color="#b55f91" size={32} />
           </TouchableOpacity>
         </View>
+
+        {/* Main content of the screen: Cards for instructions and more info*/}
         <ScrollView style={styles.scrollView}>
           <View style={styles.container}>
             <Card style={styles.card}>
@@ -76,6 +77,7 @@ export default function DreamDiaryScreen({navigation}) {
   );
 }
 
+//Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -84,6 +86,12 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
+  },
+  menuLogout: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
   },
   titleText: {
     fontSize: 24,

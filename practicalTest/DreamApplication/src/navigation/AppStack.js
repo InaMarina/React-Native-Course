@@ -1,11 +1,12 @@
 import React from 'react';
 import 'react-native-gesture-handler';
-import {StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+//importing navigators
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
 //The screens that belong navigation when user is not logged in
 import DreamDiaryScreen from '../screens/DreamDiaryScreen';
 import DreamListScreen from '../screens/DreamListScreen';
@@ -13,11 +14,12 @@ import LearnScreen from '../screens/LearnScreen';
 import AddDreamModal from '../screens/AddDreamModal';
 import InfoScreen from '../screens/InfoScreen';
 
-//Creating all types of navigation
+//Creating instances of navigations
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 
+//TabNavigator:
 function BottomTabStack() {
   return (
     <Tab.Navigator
@@ -60,6 +62,7 @@ function BottomTabStack() {
   );
 }
 
+//Stack navigation for screens, these are added to drawer navigation which is the main navigation
 function DreamDiaryScreenStack({navigation}) {
   return (
     <Stack.Navigator initialRouteName="DreamDiary" headerMode="none">
@@ -90,6 +93,7 @@ function InfoScreenStack({navigation}) {
   );
 }
 
+//This is the main navigation that is exported and used in Routes.js
 const AppStack = () => {
   return (
     <Drawer.Navigator
@@ -123,10 +127,3 @@ const AppStack = () => {
 };
 
 export default AppStack;
-
-const styles = StyleSheet.create({
-  left: {
-    padding: 10,
-  },
-  right: {},
-});

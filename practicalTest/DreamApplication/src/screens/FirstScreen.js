@@ -1,8 +1,11 @@
 import React from 'react';
+
+//Import for button component
 import FormButton from '../components/FormButton';
 
 import {View, ImageBackground, StyleSheet, StatusBar} from 'react-native';
 
+//Backgoundimage + two buttons for navigation. statusbar hidden
 export default function FirstScreen({navigation}) {
   return (
     <View style={styles.container}>
